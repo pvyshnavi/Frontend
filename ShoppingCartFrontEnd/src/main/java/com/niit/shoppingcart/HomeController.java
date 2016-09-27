@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,7 @@ import com.niit.shoppingcart.util.Util;
 public class HomeController {
 	
 	Logger log = LoggerFactory.getLogger(HomeController.class);
+	
 	@Autowired
 	CategoryDAO categoryDAO;
 	
@@ -155,8 +157,9 @@ System.out.println("jkkkkkkkkkkkkk"+product.getSupplier());
 		return mv;
 	}
 	
-	@RequestMapping(value = "here/register", method = RequestMethod.POST)
-	public ModelAndView registerUser(@ModelAttribute UserDetails userDetails) {
+	@RequestMapping(value = "here/register", method = RequestMethod.GET)
+	public ModelAndView registerUser(@ModelAttribute("userDetails") UserDetails userDetails) {
+		log.info("user object is registered as userid:" + userDetails.getId());
 		userDetails.setRole("ROLE_USER");
 		userDetailsDAO.save(userDetails);
 		ModelAndView mv  = new ModelAndView("/Home");

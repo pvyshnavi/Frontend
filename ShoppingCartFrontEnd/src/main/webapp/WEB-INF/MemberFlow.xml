@@ -9,7 +9,7 @@
 	<evaluate expression="registrationHandler.getInstance()" result="flowScope.userDetails" />
 </on-start>
 
-<view-state id="start" view="Registration" model="flowScope.userDetails">
+<view-state id="start" view="RegisterFlow" model="flowScope.userDetails">
 	<transition on="submit" to="validate" />
 </view-state>
 
@@ -20,7 +20,7 @@
 </action-state>
 
 
-<view-state id="confirmDetails" view="flowConfirmDetails" model="flowScope.userDetails">
+<view-state id="confirmDetails" view="FlowConfirmDetails" model="flowScope.userDetails">
 	<transition on="edit" to="start" />
 	<transition on="submit" to="confirm" />
 </view-state>

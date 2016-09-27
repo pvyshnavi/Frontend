@@ -42,6 +42,8 @@
 				</tr>
 				</table>
 				
+				<a href="member.obj">RegisterHere</a>
+				
 				<div id="RegisterHere">
 				<c:if test="${isUserClickedRegisterHere==true}">
 					<%@ include file="/WEB-INF/views/Registration.jsp"%>

@@ -35,10 +35,6 @@ public class ProductController {
 	@Autowired
 	private Product product ;
 	
-	//private String path = "D:\\shoppingcart\\img";
-
-	
-	
 	// For add and update product both
 	
 	//@RequestMapping("product/remove/{id}")

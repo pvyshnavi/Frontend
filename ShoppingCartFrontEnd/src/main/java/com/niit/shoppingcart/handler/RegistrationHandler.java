@@ -5,10 +5,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
+import org.springframework.stereotype.Component;
 import org.springframework.webflow.execution.RequestContext;
 
 import com.niit.shoppingcart.model.UserDetails;
 
+@Component
 public class RegistrationHandler {
 	
 	public UserDetails getInstance(){
@@ -33,15 +35,17 @@ public class RegistrationHandler {
 			messageContext.addMessage(new MessageBuilder().error().source("password").defaultText("Password cannot be empty").build());
 			status="failure";
 		}
+		
+		if(userDetails.getMail().isEmpty()) {
+			messageContext.addMessage(new MessageBuilder().error().source("mail").defaultText("MailId cannot be empty").build());
+			status="failure";
+		}
+		
 		if(userDetails.getContact().isEmpty()) {
 			messageContext.addMessage(new MessageBuilder().error().source("contact").defaultText("Mobile Number cannot be empty").build());
 			status="failure";
 		}
 	
-		if(userDetails.getMail().isEmpty()) {
-			messageContext.addMessage(new MessageBuilder().error().source("mail").defaultText("MailId cannot be empty").build());
-			status="failure";
-		}
 		if(userDetails.getAddress().isEmpty()) {
 			messageContext.addMessage(new MessageBuilder().error().source("address").defaultText("Address cannot be empty").build());
 			status="failure";
@@ -50,7 +54,7 @@ public class RegistrationHandler {
 		return status;
 	}
 	
-	public void add(RequestContext context, UserDetails userDetails){
+	public void addUserDetails(RequestContext context, UserDetails userDetails){
 	    HttpSession session = ((HttpServletRequest)context.getExternalContext().getNativeRequest()).getSession();
 	              session.setAttribute("userDetails",userDetails);
 	       }

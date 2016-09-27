@@ -5,7 +5,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +27,6 @@ import com.niit.shoppingcart.model.Category;
 import com.niit.shoppingcart.model.Product;
 import com.niit.shoppingcart.model.Supplier;
 import com.niit.shoppingcart.model.UserDetails;
-import com.niit.shoppingcart.util.FileUtil;
-import com.niit.shoppingcart.util.Util;
 
 @Controller
 public class HomeController {
@@ -60,7 +57,7 @@ public class HomeController {
 	@Autowired
 	UserDetails userDetails; 
 	
-	private String path = "D:\\shoppingcart\\img";
+	//private String path = "D:\\shoppingcart\\img";
 	
 	@RequestMapping("/product")
 	public ModelAndView listProducts(@ModelAttribute("product") Product p,MultipartFile file,HttpServletRequest request) {
@@ -97,7 +94,7 @@ System.out.println("jkkkkkkkkkkkkk"+product.getSupplier());
 		
 		productDAO.save(product);
 		
-		MultipartFile file = product.getImage();
+		//MultipartFile file = product.getImage();
 		
 		//FileUtil.upload(path, file, "id"+product.getId()+".jpg");
 	
@@ -157,16 +154,33 @@ System.out.println("jkkkkkkkkkkkkk"+product.getSupplier());
 		return mv;
 	}
 	
-	@RequestMapping(value = "here/register", method = RequestMethod.GET)
-	public ModelAndView registerUser(@ModelAttribute("userDetails") UserDetails userDetails) {
-		log.info("user object is registered as userid:" + userDetails.getId());
-		userDetails.setRole("ROLE_USER");
-		userDetailsDAO.save(userDetails);
-		ModelAndView mv  = new ModelAndView("/Home");
-		mv.addObject("successMessage", "You are successfully register");
+	//@RequestMapping(value = "here/register", method = RequestMethod.GET)
+	//public ModelAndView registerUser(@ModelAttribute("userDetails") UserDetails userDetails) {
+		//log.info("user object is registered as userid:" + userDetails.getId());
+		//userDetails.setRole("ROLE_USER");
+		//System.out.println("ddddddddddddddddd"+userDetails.getId());
+		//userDetails.setId(userDetails.getId());
+		//userDetailsDAO.save(userDetails);
+		//ModelAndView mv  = new ModelAndView("/Home");
+		//mv.addObject("successMessage", "You are successfully register");
 		
+		//return mv;
+	//}
+	
+	@RequestMapping(value = "here/register", method = RequestMethod.GET)
+	public ModelAndView registerUser(HttpSession session) {
+		log.debug("Start: method registerUser");
+		log.info("User object going to be registered has user id: " + userDetails.getId());
+		userDetails.setRole("ROLE_USER");
+		UserDetails userDetails = (UserDetails) session.getAttribute("userDetails");
+		userDetailsDAO.save(userDetails);
+		ModelAndView mv = new ModelAndView("redirect:/");
+		mv.addObject("successMessage", "You are successfully register");
+
+		log.debug("End: method registerUser");
 		return mv;
 	}
+
 	
 	@RequestMapping("/loginHere")
 	public ModelAndView login()

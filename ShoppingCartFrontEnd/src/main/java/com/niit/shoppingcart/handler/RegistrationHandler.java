@@ -27,6 +27,7 @@ public class RegistrationHandler {
 			 messageContext.addMessage(new MessageBuilder().error().source("id").defaultText("UserId cannot be empty").build());
 			 status="failure";
 		}
+		
 		if(userDetails.getName().isEmpty()) {
 			messageContext.addMessage(new MessageBuilder().error().source("name").defaultText("Name cannot be empty").build());
 			status="failure";

@@ -36,18 +36,26 @@
 				
 						<form:form modelAttribute="userDetails" method="post">
 						
-					  
+					  <form:hidden path="id"/>
 						<form:input path="id" disabled="true" readonly="true" />
+						<br>
 							
 								<form:input path="name" disabled="true" readonly="true" />
+								<br>
 							
 							<form:input path="password" disabled="true" readonly="true" />
+							<br>
 							
 						    <form:input path="mail" disabled="true" readonly="true" />
+						    <br>
 						    
 						    <form:input path="contact" disabled="true" readonly="true" />
+						    <br>
 						   
 							<form:input path="address" disabled="true" readonly="true" />
+							<br>
+							
+							
 							<div class="col-sm-4">
 							<button name="_eventId_edit" type="submit" class="btn btn-default">Edit</button>
 							</div>

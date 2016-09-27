@@ -25,7 +25,7 @@
 						<c:when test="${empty loggedInUser}">
 							<td align="left">Existing user<a href="loginHere"> Login
 									here</a></td>
-							<td align="center">New user<a href="registerHere">
+							<td align="center">New user<a href="member.obj">
 									Register here</a></td>
 						</c:when>
 						<c:when test="${not empty loggedInUser}">
@@ -42,7 +42,6 @@
 				</tr>
 				</table>
 				
-				<a href="member.obj">RegisterHere</a>
 				
 				<div id="RegisterHere">
 				<c:if test="${isUserClickedRegisterHere==true}">

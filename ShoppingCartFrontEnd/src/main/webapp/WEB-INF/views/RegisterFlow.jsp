@@ -27,35 +27,39 @@
 				<div class="col-sm-4">
 					<div class="signup-form">
 						<!--sign up form-->
-						<h2 style="text-align: center;">RegisterHere<</h2>
+						<h2 style="text-align: center;">RegisterHere</h2>
 						
 						<form:form modelAttribute="userDetails">
-							<form:input path="id" pattern=".{4,7}" title="id should contains 4 to 7 characters" 
+							<form:input path="id" pattern=".{2,7}" title="id should contains 2 to 7 characters" 
 								placeholder="ID" />
 							
 								<c:forEach items="${flowRequestContext.messageContext.getMessagesBySource('id')}" var="err">
 					  <div><span>${err.text}</span></div>
 					</c:forEach><br />
+					<br>
 							<form:input path="name"  placeholder="Name" 
 								 />
 								 
 								 <c:forEach items="${flowRequestContext.messageContext.getMessagesBySource('name')}" var="err">
 					  <div><span>${err.text}</span></div>
 					</c:forEach><br />
+					<br>
 							
-							<form:input path="password"  pattern=".{4,15}" title="password should contains 4 to 15 characters"
+							<form:input path="password"  pattern=".{2,15}" title="password should contains 2 to 15 characters"
 								placeholder="Password"
 								 />
 							
 							<c:forEach items="${flowRequestContext.messageContext.getMessagesBySource('password')}" var="err">
 					  <div><span>${err.text}</span></div>
 					</c:forEach><br />
+					<br>
 					
 					<form:input type="mail"  path="mail" placeholder="Mail" />
 							
 							<c:forEach items="${flowRequestContext.messageContext.getMessagesBySource('mail')}" var="err">
 					  <div><span>${err.text}</span></div>
 					</c:forEach><br />
+					<br>
 							
 							<form:input type="tel"  path="contact" pattern="^\d{10}$" title="Please enter valid mobile number"
 								placeholder="Contact" 
@@ -64,6 +68,7 @@
 								 <c:forEach items="${flowRequestContext.messageContext.getMessagesBySource('mobile')}" var="err">
 					  <div><span>${err.text}</span></div>
 					</c:forEach><br />
+					<br>
 					
 							
 							<form:input path="address" placeholder="Address" />
@@ -71,16 +76,16 @@
 							<c:forEach items="${flowRequestContext.messageContext.getMessagesBySource('address')}" var="err">
 					  <div><span>${err.text}</span></div>
 					</c:forEach><br />
-							
-							
+					<br>
+									
 							<button name="_eventId_submit" type="submit" class="btn btn-default">Signin</button>
 						</form:form>
 					</div>
 					<!--/sign up form-->
 				</div>
 			</div>
-		</div>
-	</section>
+		
+</section>
 
 </body>
 </html>

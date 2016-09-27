@@ -29,7 +29,7 @@ public class SupplierController {
 		//model.addAttribute("isAdminClickedSuppliers", "true");
 		model.addAttribute("supplier", supplier);
 		model.addAttribute("supplierList", this.supplierDAO.list());
-		return "supplier";
+		return "Supplier";
 	}
 
 	// For add and update supplier both

@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.shoppingcart.dao.CartDAO;
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.dao.UserDetailsDAO;
+import com.niit.shoppingcart.model.Cart;
 import com.niit.shoppingcart.model.Category;
 import com.niit.shoppingcart.model.UserDetails;
 
@@ -41,6 +43,12 @@ public class UserController {
 	 @Autowired
 	 UserDetailsDAO uDao;
 	 List<UserDetails> allu;
+	 
+	 @Autowired
+	 CartDAO cartDAO;
+	 
+	 @Autowired
+	 Cart cart;
 	
 	
 	@RequestMapping("/Login")
@@ -65,8 +73,11 @@ public class UserController {
 				mv = new ModelAndView("AdminHome");
 			}
 		}else{
+			cart = cartDAO.getByUserId(id);
 				session.setAttribute("name", userDetails.getName());
 				session.setAttribute("UserID", userDetails.getId());
+				session.setAttribute("cartSize", cartDAO.userCartList(id).size());
+
 			
 		}
 		return mv;

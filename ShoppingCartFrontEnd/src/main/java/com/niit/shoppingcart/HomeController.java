@@ -154,19 +154,6 @@ System.out.println("jkkkkkkkkkkkkk"+product.getSupplier());
 		return mv;
 	}
 	
-	//@RequestMapping(value = "here/register", method = RequestMethod.GET)
-	//public ModelAndView registerUser(@ModelAttribute("userDetails") UserDetails userDetails) {
-		//log.info("user object is registered as userid:" + userDetails.getId());
-		//userDetails.setRole("ROLE_USER");
-		//System.out.println("ddddddddddddddddd"+userDetails.getId());
-		//userDetails.setId(userDetails.getId());
-		//userDetailsDAO.save(userDetails);
-		//ModelAndView mv  = new ModelAndView("/Home");
-		//mv.addObject("successMessage", "You are successfully register");
-		
-		//return mv;
-	//}
-	
 	@RequestMapping(value = "here/register", method = RequestMethod.GET)
 	public ModelAndView registerUser(HttpSession session) {
 		log.debug("Start: method registerUser");

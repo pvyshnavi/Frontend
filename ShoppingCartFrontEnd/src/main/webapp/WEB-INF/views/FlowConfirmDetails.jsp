@@ -55,7 +55,7 @@
 							<form:input path="address" disabled="true" readonly="true" />
 							<br>
 							
-							
+							<form:hidden path="role"  value="ROLE_USER" />
 							<div class="col-sm-4">
 							<button name="_eventId_edit" type="submit" class="btn btn-default">Edit</button>
 							</div>

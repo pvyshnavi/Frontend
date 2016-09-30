@@ -32,8 +32,6 @@
 							
 								
 								
-								<li><a href="myCart"><i class="fa fa-shopping-cart"></i>
-										Cart<span class="badge">${cartSize}</span></a></li>
 										<c:choose>
 										<c:when test="${empty loggedInUser}">
 								<li><a href="member.obj"><i class="fa fa-lock"></i>

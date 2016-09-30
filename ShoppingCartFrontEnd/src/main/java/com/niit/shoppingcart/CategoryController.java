@@ -40,7 +40,7 @@ public class CategoryController {
 		log.debug("Start: method addCategories");
 		String newID = Util.removeComma(category.getId());
 		category.setId(newID);
-		categoryDAO.save(category);
+		categoryDAO.saveOrUpdate(category);
 		
 		log.debug("End: method addCategories");
 

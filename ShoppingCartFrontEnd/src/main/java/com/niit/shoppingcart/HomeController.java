@@ -92,7 +92,7 @@ System.out.println("jkkkkkkkkkkkkk"+product.getSupplier());
 		String newID = Util.removeComma(product.getId());
 		product.setId(newID);*/
 		
-		productDAO.save(product);
+		productDAO.saveOrUpdate(product);
 		
 		//MultipartFile file = product.getImage();
 		

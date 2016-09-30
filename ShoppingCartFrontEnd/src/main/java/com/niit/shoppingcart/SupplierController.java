@@ -41,7 +41,7 @@ public class SupplierController {
 		ModelAndView mv= new ModelAndView();
 		if(supplierDAO.get(supplier.getId())==null)
 		{
-			supplierDAO.save(supplier);
+			supplierDAO.saveOrUpdate(supplier);
 			
 		}
 		else

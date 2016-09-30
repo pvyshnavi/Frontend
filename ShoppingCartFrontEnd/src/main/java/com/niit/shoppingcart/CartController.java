@@ -112,7 +112,7 @@ public class CartController {
 		model.addAttribute("cart", this.cartDAO.getByUserId(user_id));
 		model.addAttribute("listCarts", this.cartDAO.list());
 		log.debug("End: method editCart");
-		return "cart";
+		return "myCart";
 	}
 
 	}

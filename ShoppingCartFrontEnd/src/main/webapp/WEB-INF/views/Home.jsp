@@ -50,6 +50,11 @@ height:20em;
 								<li><a href="myCart"><i class="fa fa-shopping-cart"></i>
 										Cart<span class="badge">${cartSize}</span></a></li>
 										</ul>
+										<div id = "myCart">
+											<c:if test="${userClickedCartHere==true}">
+											<%@ include file="Cart.jsp"%>	
+    										</c:if>
+    									</div>
 						</div>
 					</div>
 				</div>
@@ -191,11 +196,7 @@ height:20em;
 
 			</div>
 			
-			<div id = "myCart">
-			<c:if test="${userClickedCartHere==true}">
-	<%@ include file="Cart.jsp"%>	
-    </c:if>
-    </div>
+			
 			
 				<div id="welcomemsg">
 				<c:if test="${welcometrue==true}">

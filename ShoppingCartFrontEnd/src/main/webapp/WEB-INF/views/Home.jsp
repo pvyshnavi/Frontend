@@ -94,12 +94,31 @@ height:20em;
 		<c:if test="${isUserClickedSaree==true }">
 			<%@ include file="saree.jsp"%>
 		</c:if>
-	</div>
-
-
+		</div>
 		
+		<div id="lehenga">
+		<c:if test="${isUserClickedLehenga==true }">
+			<%@ include file="lehenga.jsp"%>
+		</c:if>
+		</div>
 
+		<div id="gown">
+		<c:if test="${isUserClickedGown==true }">
+			<%@ include file="gown.jsp"%>
+		</c:if>
+		</div>
 
+		<div id="salwars">
+		<c:if test="${isUserClickedSalwars==true }">
+			<%@ include file="salwars.jsp"%>
+		</c:if>
+		</div>
+		
+		<div id="tops">
+		<c:if test="${isUserClickedTops==true }">
+			<%@ include file="tops.jsp"%>
+		</c:if>
+		</div>
 
 <div class="container">
 <br>

@@ -16,7 +16,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<title>Sarees</title>
+<title>Lehengas</title>
 
 <link
 	href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,800'
@@ -35,15 +35,15 @@
 				<div class="col-md-4">
 					<div class="blog-item">
 						<a href="blog-single.html"><img
-							src="resources/images/saree1.jpg" alt=""></a>
+							src="resources/images/lehenga1.jpg" alt=""></a>
 						<div class="name">
 							<h3
 								style="font-family: verdana; text-align: center; color: #FDFDFD">
-								Net Saree</h3>
+								Circular/Flared Lehenga</h3>
 						</div>
 						<div align="center">
 							<button type="button" class="btn btn-lg btn-primary"
-								disabled="disabled" align="left">$ 2000</button>
+								disabled="disabled" align="left">$ 3999</button>
 							<input align="right" class="btn btn-warning" type="submit"
 								value="Add To Cart">
 						</div>
@@ -52,15 +52,15 @@
 				<div class="col-md-4">
 					<div class="blog-item">
 						<a href="blog-single.html"><img
-							src="resources/images/saree2.jpg" alt=""></a>
+							src="resources/images/lehenga2.jpg" alt=""></a>
 						<div class="name">
 							<h3
 								style="font-family: verdana; text-align: center; color: #FDFDFD">
-								Georgette Saree</h3>
+								Mermaid/Fishtail Lehenga</h3>
 						</div>
 						<div align="center">
 							<button type="button" class="btn btn-lg btn-primary"
-								disabled="disabled" align="left">$ 800</button>
+								disabled="disabled" align="left">$ 6451</button>
 							<input align="right" class="btn btn-warning" type="submit"
 								value="Add To Cart">
 						</div>
@@ -69,15 +69,15 @@
 				<div class="col-md-4">
 					<div class="blog-item">
 						<a href="blog-single.html"><img
-							src="resources/images/saree3.jpg" alt=""></a>
+							src="resources/images/lehenga3.jpg" alt=""></a>
 						<div class="name">
 							<h3
 								style="font-family: verdana; text-align: center; color: #FDFDFD">
-								Chiffon Saree</h3>
+								Panelled Lehenga</h3>
 						</div>
 						<div align="center">
 							<button type="button" class="btn btn-lg btn-primary"
-								disabled="disabled" align="left">$ 600</button>
+								disabled="disabled" align="left">$ 10000</button>
 							<input align="right" class="btn btn-warning" type="submit"
 								value="Add To Cart">
 						</div>
@@ -86,15 +86,15 @@
 				<div class="col-md-4">
 					<div class="blog-item">
 						<a href="blog-single.html"><img
-							src="resources/images/saree4.jpg" alt=""></a>
+							src="resources/images/lehenga4.jpg" alt=""></a>
 						<div class="name">
 							<h3
 								style="font-family: verdana; text-align: center; color: #FDFDFD">
-								Chanderi Saree</h3>
+								Lehangas with a Jacket</h3>
 						</div>
 						<div align="center">
 							<button type="button" class="btn btn-lg btn-primary"
-								disabled="disabled" align="left">$ 1000</button>
+								disabled="disabled" align="left">$ 5999</button>
 							<input align="right" class="btn btn-warning" type="submit"
 								value="Add To Cart">
 						</div>
@@ -103,11 +103,11 @@
 				<div class="col-md-4">
 					<div class="blog-item">
 						<a href="blog-single.html"><img
-							src="resources/images/saree5.jpg" alt=""></a>
+							src="resources/images/lehenga5.jpg" alt=""></a>
 						<div class="name">
 							<h3
 								style="font-family: verdana; text-align: center; color: #FDFDFD">
-								Silk Saree</h3>
+								Half Saree Lehenga</h3>
 						</div>
 						<div align="center">
 							<button type="button" class="btn btn-lg btn-primary"
@@ -120,11 +120,11 @@
 				<div class="col-md-4">
 					<div class="blog-item">
 						<a href="blog-single.html"><img
-							src="resources/images/saree6.jpg" alt=""></a>
+							src="resources/images/lehenga6.jpg" alt=""></a>
 						<div class="name">
 							<h3
 								style="font-family: verdana; text-align: center; color: #FDFDFD">
-								Banarasi Sarees</h3>
+								Sharara cut Lehenga</h3>
 						</div>
 						<div align="center">
 							<button type="button" class="btn btn-lg btn-primary"

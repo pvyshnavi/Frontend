@@ -67,8 +67,8 @@ public class UserController {
 			userDetails = userDetailsDAO.get(id);
 			session.setAttribute("loggedInUser", userDetails.getName());
 		
-		
-			
+			session.setAttribute("user", userDetails);
+			System.out.println(session.getAttribute("user"));
 			if(userDetails.getRole().equals("ROLE_ADMIN")){
 				mv = new ModelAndView("AdminHome");
 			}

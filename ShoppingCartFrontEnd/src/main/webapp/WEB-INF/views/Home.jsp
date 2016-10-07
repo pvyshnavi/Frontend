@@ -38,33 +38,33 @@ height:20em;
 					<div class="col-sm-4">
 						<div class="logo pull-left">
 							<a href=""><img
-								src="resources/images/logo.jpg" alt="" /></a>
+								src="resources/images/logo.jpg" alt="Bootsshop" /></a>
 						</div>
 											</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav">
+							<!--  <ul class="nav navbar-nav">
 							
 								
 								
-								<li><a href="myCart"><i class="fa fa-shopping-cart"></i>
+								<li><a href="Cart"><i class="fa fa-shopping-cart"></i>
 										Cart<span class="badge">${cartSize}</span></a></li>
-										</ul>
+										</ul> -->
 										<div id = "myCart">
 											<c:if test="${userClickedCartHere==true}">
 											<%@ include file="Cart.jsp"%>	
     										</c:if>
-    									</div>
+    									</div> 
 						</div>
 					</div>
 				</div>
 			</div>
-										
-
-
-
-		<table width="100%">
+			
+			<table width="100%">
 				<tr>
+				
+				
+				
 					<c:choose>
 						<c:when test="${empty loggedInUser}">
 							<td align="left">Existing user<a href="loginHere"> Login
@@ -74,6 +74,10 @@ height:20em;
 						</c:when>
 						<c:when test="${not empty loggedInUser}">
 							<td>Welcome ${loggedInUser},</td>
+							
+		<li><a href="myCart">myCart<i class="fa fa-shopping-cart"></i></a></li>
+										<!--  Cart<span class="badge">${cartSize}</span></a></li> -->
+										
 							<td align="right"><a href="logout"> logout</a></td>
 						</c:when>
 
@@ -85,6 +89,14 @@ height:20em;
 					</c:if>
 				</tr>
 				</table>
+				
+		<div id="saree">
+		<c:if test="${isUserClickedSaree==true }">
+			<%@ include file="saree.jsp"%>
+		</c:if>
+	</div>
+
+
 		
 
 

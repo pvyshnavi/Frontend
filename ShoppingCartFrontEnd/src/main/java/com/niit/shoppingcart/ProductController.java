@@ -57,20 +57,20 @@ public class ProductController {
 		//return "redirect:/product";
 	//}
 
-	//@RequestMapping("product/edit/{id}")
-	//public String editProduct(@PathVariable("id") String id, Model model) {
-		//log.debug("Start: method editProduct");
-		//System.out.println("editProduct");
+	@RequestMapping("product/edit/{id}")
+	public String editProduct(@PathVariable("id") String id, Model model) {
+		log.debug("Start: method editProduct");
+		System.out.println("editProduct");
 		
-		//product = productDAO.get(id);
-		//model.addAttribute("product",product);
-		//model.addAttribute("listProducts", productDAO.list());
-		//model.addAttribute("categoryList", categoryDAO.list());
-		//model.addAttribute("supplierList",supplierDAO.list());
-		//log.debug("End: method editProduct");
+		product = productDAO.get(id);
+		model.addAttribute("product",product);
+		model.addAttribute("listProducts", productDAO.list());
+		model.addAttribute("categoryList", categoryDAO.list());
+		model.addAttribute("supplierList",supplierDAO.list());
+		log.debug("End: method editProduct");
 
-		//return "redirect:/product";
-	//}
+		return "redirect:/product";
+	}
 
 	@RequestMapping(value = "product/get/{id}")
 	public String getSelectedProduct(@PathVariable("id") String id, Model model,

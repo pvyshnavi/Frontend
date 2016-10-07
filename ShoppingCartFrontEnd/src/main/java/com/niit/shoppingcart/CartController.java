@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.CartDAO;
 import com.niit.shoppingcart.dao.CategoryDAO;
@@ -39,23 +40,27 @@ public class CartController {
 	@Autowired
 	private Cart cart;
 	
-	@RequestMapping(value = "/myCart")
+	
+	
+	/*@RequestMapping(value = "/myCart")
 	public String myCart(Model model, HttpSession session) {
 		log.debug("Start: method myCart");
 		UserDetails userDetails =(UserDetails) session.getAttribute("userDetails");
+		System.out.println();
 		log.info("\n*************\nuserID is {}\n*************\n", userDetails.getId());
 		model.addAttribute("userClickedCartHere", true);
 		model.addAttribute("category", new Category());
 		model.addAttribute("categoryList", categoryDAO.list());
 		cart = cartDAO.getByUserId(userDetails.getId());
 		model.addAttribute("cart", cart);
+		
 		model.addAttribute("cartList", cartDAO.userCartList(userDetails.getId()));
 		System.out.println(cartDAO.getTotal(userDetails.getId()));
 		model.addAttribute("totalAmount", cartDAO.getTotal(userDetails.getId())); 
 		model.addAttribute("displayCart", "true");
 		log.debug("End: method myCart");
 		return "/Home";
-	}
+	} */
 
 	/*
 	 * @RequestMapping(value = "/carts", method = RequestMethod.GET) public
@@ -89,21 +94,22 @@ public class CartController {
 
 	}
 
-	@RequestMapping("cart/remove/{id}")
+	/*@RequestMapping("cart/remove/{id}")
 	public String removeCart(@PathVariable("id") int id, ModelMap model) throws Exception {
 		log.debug("Start: method removeCart");
 
 		try {
-			cartDAO.delete(id);
+			cartDAO.delete(cart);
 			model.addAttribute("message", "Successfully removed");
 		} catch (Exception e) {
 			model.addAttribute("message", e.getMessage());
 			e.printStackTrace();
 		}
-		// redirectAttrs.addFlashAttribute(arg0, arg1)
+		 //redirectAttrs.addFlashAttribute(arg0, arg1)
 		log.debug("End: method removeCart");
 		return "redirect:/myCart";
-	}
+	}*/
+
 
 	@RequestMapping("cart/edit/{id}")
 	public String editCart(@PathVariable("id") String user_id, Model model) {

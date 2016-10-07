@@ -18,15 +18,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-
+import com.niit.shoppingcart.dao.CartDAO;
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.dao.ProductDAO;
 import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.dao.UserDetailsDAO;
+import com.niit.shoppingcart.model.Cart;
 import com.niit.shoppingcart.model.Category;
 import com.niit.shoppingcart.model.Product;
 import com.niit.shoppingcart.model.Supplier;
 import com.niit.shoppingcart.model.UserDetails;
+import com.niit.shoppingcart.util.FileUtil;
 
 @Controller
 public class HomeController {
@@ -57,7 +59,13 @@ public class HomeController {
 	@Autowired
 	UserDetails userDetails; 
 	
-	//private String path = "D:\\shoppingcart\\img";
+	@Autowired
+	CartDAO cartDAO;
+	
+	@Autowired
+	Cart cart;
+	
+	private String path = "D:\\shoppingcart\\img";
 	
 	@RequestMapping("/product")
 	public ModelAndView listProducts(@ModelAttribute("product") Product p,MultipartFile file,HttpServletRequest request) {
@@ -94,9 +102,9 @@ System.out.println("jkkkkkkkkkkkkk"+product.getSupplier());
 		
 		productDAO.saveOrUpdate(product);
 		
-		//MultipartFile file = product.getImage();
+		MultipartFile file = product.getImage();
 		
-		//FileUtil.upload(path, file, "id"+product.getId()+".jpg");
+		FileUtil.upload(path, file, "id"+product.getId()+".jpg");
 	
 		log.debug("End: method addProduct");
 
@@ -125,23 +133,10 @@ System.out.println("jkkkkkkkkkkkkk"+product.getSupplier());
 		log.debug("End: method removeProduct");
 		return "redirect:/product";
 	}
+	
+	
 
-	@RequestMapping("product/edit/{id}")
-	public String editProduct(@PathVariable("id") String id, Model model) {
-		log.debug("Start: method editProduct");
-		System.out.println("editProduct");
-		
-		product = productDAO.get(id);
-		model.addAttribute("product",product);
-		model.addAttribute("listProducts", productDAO.list());
-		model.addAttribute("categoryList", categoryDAO.list());
-		model.addAttribute("supplierList",supplierDAO.list());
-		log.debug("End: method editProduct");
-
-		return "redirect:/product";
-	}
-
-
+	
 	
 	@RequestMapping("/")
 	public ModelAndView onLoad(HttpSession session) {
@@ -160,7 +155,7 @@ System.out.println("jkkkkkkkkkkkkk"+product.getSupplier());
 		log.info("User object going to be registered has user id: " + userDetails.getId());
 		userDetails.setRole("ROLE_USER");
 		UserDetails userDetails = (UserDetails) session.getAttribute("userDetails");
-		userDetailsDAO.save(userDetails);
+		userDetailsDAO.saveOrUpdate(userDetails);
 		ModelAndView mv = new ModelAndView("redirect:/");
 		mv.addObject("successMessage", "You are successfully register");
 
@@ -183,5 +178,52 @@ System.out.println("jkkkkkkkkkkkkk"+product.getSupplier());
 		mv.addObject("isUserClickedRegisterHere", true);
 		return mv;
 	}
+	
+	@RequestMapping(value = "/myCart")
+	public String myCart(Model model, HttpSession session) {
+		log.debug("Start: method myCart");
+		UserDetails userDetails =(UserDetails) session.getAttribute("user");
+		System.out.println("ccccccccccccccccc"+userDetails);
+		log.info("\n*************\nuserID is {}\n*************\n", userDetails.getId());
+		model.addAttribute("userClickedCartHere", true);
+		model.addAttribute("category", new Category());
+		model.addAttribute("categoryList", categoryDAO.list());
+		//cart = cartDAO.getByUserId(userDetails.getId());
+		//model.addAttribute("cart", cart);
+		
+		model.addAttribute("cartList", cartDAO.userCartList(userDetails.getId()));
+		System.out.println("sizeeeeeeeeeeeeeeeeeeeeeeeeeee"+cartDAO.userCartList(userDetails.getId()).size());
+		for(Cart c :cartDAO.userCartList(userDetails.getId()))
+		{
+			System.out.println("hhhhhhhhhhhhhhhhhhhhhhhhh"+c.getPrice());
+			
+		}
+		System.out.println(cartDAO.getTotal(userDetails.getId()));
+		model.addAttribute("totalAmount", cartDAO.getTotal(userDetails.getId())); 
+		model.addAttribute("displayCart", "true");
+		log.debug("End: method myCart");
+		return "/Home";
+	} 
+	
+	@RequestMapping("myCart/remove/{id}")
+	public String removeCart(@PathVariable("id") String id, ModelMap model) throws Exception {
+		log.debug("Start: method removeCart");
+		System.out.println("ccccccc"+id);
+		cart=cartDAO.get(id);
+		
+		//try {
+			System.out.println("bbbb");
+			cartDAO.delete(cart);
+			System.out.println("aaaaaa");
+			model.addAttribute("message", "Successfully removed");
+		//} catch (Exception e) {
+			//model.addAttribute("message", e.getMessage());
+			//e.printStackTrace();
+		//}
+		 //redirectAttrs.addFlashAttribute(arg0, arg1)
+		log.debug("End: method removeCart");
+		return "redirect:/myCart";
+	}
+
 	
 }

@@ -2,41 +2,48 @@
 		<!--Footer-->
 	
 
-		<div class="footer-widget">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-2">
-						<div class="single-widget">
-							<h2>Service</h2>
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Online Help</a></li>
-								<a href="#">Contact Us</a>
-								<a href="#">Order Status</a>
-								<a href="#">Change Location</a>
-								<a href="#">FAQ’s</a>
-							</ul>
-						</div>
-					</div>
-					
-					<div class="col-sm-2">
-						<div class="single-widget">
-							<h2>Policies</h2>
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Terms of Use</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-							</ul>
-						</div>
-					</div>
-				
-					
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row">
-					<p class="pull-left">Copyright © 2016 YouGoGirl Inc. All rights
-						reserved.</p>
-					
-				</div>
-			</div>
-		</div>
 
-	</footer>
+<div class="container">
+<div class="row">
+   <div class="col-sm-2 col-xs-12">
+
+<h3>Information</h3>
+<ul>
+<li><a href="">About Us</a></li>
+<li><a href="">Delivery </a></li>
+<li><a href="">Privacy Policy</a></li>
+<li><a href="">Terms &amp; Conditions</a></li>
+</ul>
+</div>
+<div class="col-sm-2 col-xs-12">
+<h3>Customer Service</h3>
+<ul>
+<li><a href="">Contact Us</a></li>
+</ul>
+</div>
+ 
+ <div class="col-sm-2 col-xs-12">
+<h3>Follow Us</h3>
+<ul>
+<li><a href="http://facebook.com">Facebook</a></li>
+<li><a href="http://twitter.com">Twitter</a></li>
+<li><a href="http://youtube.com">You Tube</a></li>
+</ul>
+</div>
+ 
+<div class="powered">
+<div class="container">
+<div class="row">
+ <div class="col-sm-7 col-xs-12">
+<p class="pull-left">Copyright© 2016 YOUGOGIRL Inc. All rights
+						reserved.</p> 
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="resources/js/jquery-3.1.0.min.js"></script>
+<script src="resources/Bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

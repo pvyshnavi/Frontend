@@ -19,7 +19,7 @@ public class FileUploadController {
 	/**
 	 * Upload single file using Spring Controller
 	 */
-	@RequestMapping(value = "/UploadFile", method = RequestMethod.POST)
+	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
 	public @ResponseBody String handleFileUpload(
             @RequestParam("file") MultipartFile file){
         String name = file.getOriginalFilename();
@@ -50,7 +50,7 @@ public class FileUploadController {
 	/**
 	 * Upload multiple file using Spring Controller
 	 */
-	@RequestMapping(value = "/UploadMultipleFile", method = RequestMethod.POST)
+	@RequestMapping(value = "/uploadMultipleFile", method = RequestMethod.POST)
 	public @ResponseBody
 	String uploadMultipleFileHandler(@RequestParam("name") String[] names,
 			@RequestParam("file") MultipartFile[] files) {

@@ -40,7 +40,132 @@ height:20em;
 							<a href=""><img
 								src="resources/images/logo.jpg" alt="Bootsshop" /></a>
 						</div>
-											</div>
+					</div>
+					
+					<div class="header-right-toggle pull-right hidden-md hidden-lg">
+							<a href="javascript:void(0)" class="side-menu-button"><i
+								class="fa fa-bars"></i></a>
+						</div>
+						<nav class="main-navigation pull-right hidden-xs hidden-sm">
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#" class="has-submenu">Category</a>
+								<ul class="sub-menu">
+									<li><a href="cake">Cakes</a></li>
+									<li><a href="cookie">Cookies</a></li>
+									<li><a href="chocolate">Chocolates</a></li>
+								</ul> <c:choose>
+									<c:when test="${empty loggedInUser}">
+										<li><a href="login" role="button"
+											style="padding-right: 0"><span
+												class="btn btn-large btn-success">Login</span></a></li>
+										<li><a href="member.obj" " role="button"
+											style="padding-right: 0"><span
+												class="btn btn-large btn-success">Register</span></a></li>
+									</c:when>
+								</c:choose>
+						</ul>
+						</nav>
+					</div>
+				</div>
+				</header>
+				<div class="slider">
+					<div class="fullwidthbanner-container">
+						<div class="fullwidthbanner">
+							<ul>
+								<li class="first-slide" data-transition="fade"
+									data-slotamount="10" data-masterspeed="300"><img
+									src="resources/images/462123.jpg" data-fullwidthcentering="on"
+									alt="slide">
+									<div class="tp-caption first-line lft tp-resizeme start"
+										data-x="center" data-hoffset="0" data-y="250"
+										data-speed="1000" data-start="200"
+										data-easing="Power4.easeOut" data-splitin="none"
+										data-splitout="none" data-elementdelay="0"
+										data-endelementdelay="0">CAKES</div>
+									<div class="tp-caption second-line lfb tp-resizeme start"
+										data-x="center" data-hoffset="0" data-y="340"
+										data-speed="1000" data-start="800"
+										data-easing="Power4.easeOut" data-splitin="none"
+										data-splitout="none" data-elementdelay="0"
+										data-endelementdelay="0">A Party without cake, is just a
+										meeting !!!</div>
+									<div class="tp-caption slider-btn sfb tp-resizeme start"
+										data-x="center" data-hoffset="0" data-y="510"
+										data-speed="1000" data-start="2200"
+										data-easing="Power4.easeOut" data-splitin="none"
+										data-splitout="none" data-elementdelay="0"
+										data-endelementdelay="0">
+										<a href="#" class="btn btn-slider">Discover More</a>
+									</div></li>
+								<li class="first-slide" data-transition="fade"
+									data-slotamount="10" data-masterspeed="300"><img
+									src="resources/images/3597_cookies.jpg"
+									data-fullwidthcentering="on" alt="slide">
+									<div class="tp-caption first-line lft tp-resizeme start"
+										data-x="center" data-hoffset="0" data-y="250"
+										data-speed="1000" data-start="200"
+										data-easing="Power4.easeOut" data-splitin="none"
+										data-splitout="none" data-elementdelay="0"
+										data-endelementdelay="0">COOKIES</div>
+									<div class="tp-caption second-line lfb tp-resizeme start"
+										data-x="center" data-hoffset="0" data-y="340"
+										data-speed="1000" data-start="800"
+										data-easing="Power4.easeOut" data-splitin="none"
+										data-splitout="none" data-elementdelay="0"
+										data-endelementdelay="0">life is short..eat cookies for
+										breake!!!</div>
+									<div class="tp-caption slider-btn sfb tp-resizeme start"
+										data-x="center" data-hoffset="0" data-y="510"
+										data-speed="1000" data-start="2200"
+										data-easing="Power4.easeOut" data-splitin="none"
+										data-splitout="none" data-elementdelay="0"
+										data-endelementdelay="0">
+										<a href="#" class=" second-btn btn btn-slider">Discover
+											More</a>
+									</div></li>
+							
+								<li class="first-slide" data-transition="fade"
+									data-slotamount="10" data-masterspeed="300"><img
+									src="resources/images/relish-sweet-benefits-of-candy-f-98f6f17b21.jpg"
+									data-fullwidthcentering="on" alt="slide">
+									<div class="tp-caption first-line lft tp-resizeme start"
+										data-x="center" data-hoffset="0" data-y="250"
+										data-speed="1000" data-start="200"
+										data-easing="Power4.easeOut" data-splitin="none"
+										data-splitout="none" data-elementdelay="0"
+										data-endelementdelay="0">CHOCOLATES</div>
+									<div class="tp-caption second-line lfb tp-resizeme start"
+										data-x="center" data-hoffset="0" data-y="340"
+										data-speed="1000" data-start="800"
+										data-easing="Power4.easeOut" data-splitin="none"
+										data-splitout="none" data-elementdelay="0"
+										data-endelementdelay="0">Life is Short.. Eat Chocolate
+										!!!</div>
+									<div class="tp-caption slider-btn sfb tp-resizeme start"
+										data-x="center" data-hoffset="0" data-y="510"
+										data-speed="1000" data-start="2200"
+										data-easing="Power4.easeOut" data-splitin="none"
+										data-splitout="none" data-elementdelay="0"
+										data-endelementdelay="0">
+										<a href="#" class="btn btn-slider">Discover More</a>
+									</div></li>
+							</ul>
+						</div>
+					</div>
+					<nav class="sidebar-menu slide-from-left">
+					<div class="nano">
+						<div class="content">
+							<nav class="responsive-menu">
+							<ul>
+								<li><a href="index-2.html">Home</a></li>
+								<li class="menu-item-has-children"><a href="#">Category</a>
+									<ul class="sub-menu">
+										<li><a href="services.html">Cakes</a></li>
+										<li><a href="clients.html">Cookies</a></li>
+										<li><a href="clients.html">Chocolates</a></li>
+									</ul></li>
+					
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<!--  <ul class="nav navbar-nav">
